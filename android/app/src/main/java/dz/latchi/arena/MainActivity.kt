@@ -71,8 +71,8 @@ class MainActivity : AppCompatActivity() {
             val d = res.data
             if (res.resultCode == RESULT_OK && d != null) {
                 val clip = d.clipData
-                out = if (clip != null && clip.count > 0) {
-                    Array(clip.count) { clip.getItemAt(it).uri }
+                out = if (clip != null && clip.itemCount > 0) {
+                    Array(clip.itemCount) { clip.getItemAt(it).uri }
                 } else {
                     d.data?.let { arrayOf(it) }
                 }
