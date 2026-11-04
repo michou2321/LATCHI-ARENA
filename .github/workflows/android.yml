@@ -61,7 +61,7 @@ jobs:
       - name: تسمية
         run: |
           mkdir -p out
-          find android/app/build/outputs -name "*.apk" -exec cp {} out/LatchiArena-1.0.0.apk \;
+          find android/app/build/outputs -name "*.apk" -exec cp {} out/LatchiArena-1.1.0.apk \;
           ls -lh out/
 
       - uses: actions/upload-artifact@v4
@@ -74,10 +74,10 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.0
-          name: "Latchi Arena 1.0.0 — arena.ai فـتطبيق"
+          tag_name: v1.1.0
+          name: "Latchi Arena AI 1.1.0 — arena.ai فـتطبيق"
           body: |
-            ## Latchi Arena 1.0.0
+            ## Latchi Arena AI 1.1.0
 
             **الموقع كامل داخل تطبيق.** بلا متصفح · بلا شريط عناوين · بلا تعب.
 

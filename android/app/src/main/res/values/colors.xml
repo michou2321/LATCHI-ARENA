@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bg">#0A0A12</color>
-    <color name="surface">#14141F</color>
-    <color name="primary">#7C4DFF</color>
-    <color name="accent">#22D3EE</color>
-    <color name="text">#EDEDF5</color>
+    <color name="brand_violet">#7C4DFF</color>
+    <color name="brand_cyan">#22D3EE</color>
+    <color name="bg_dark">#0A0A12</color>
+    <color name="surface_dark">#14141F</color>
+    <color name="text_dark">#EDEDF5</color>
+    <color name="ic_bg">#0A0A12</color>
 </resources>

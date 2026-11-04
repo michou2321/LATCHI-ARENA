@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Latchi Arena</string>
+    <string name="app_name">Latchi Arena AI</string>
+    <string name="splash_tag">ذكاء اصطناعي · في جيبك</string>
+
+    <string name="login_desc">أقوى موديلات الذكاء الاصطناعي فـمكان واحد.\nقارن · جرّب · اختار الأفضل.</string>
+    <string name="login_card_title">واش راك تلقى هنا؟</string>
+    <string name="login_card_body">المحادثة مع أي موديل · مقارنة موديلين فنفس الوقت · تصويت على الردود · سجل محفوظ · رفع صور وملفات.</string>
+    <string name="feat_models">100+ موديل</string>
+    <string name="feat_compare">مقارنة</string>
+    <string name="feat_free">مجاني</string>
+    <string name="start_now">ابدأ الآن</string>
+    <string name="skip_login">دخول سريع بلا حساب</string>
+    <string name="open_browser">فتح فـالمتصفح</string>
+
+    <string name="loading">يتحمّل…</string>
+    <string name="back">رجوع</string>
+    <string name="forward">قدّام</string>
+    <string name="home">الرئيسية</string>
+    <string name="reload">تحديث</string>
+    <string name="language">اللغة</string>
+    <string name="menu">القائمة</string>
+    <string name="theme">الثيم</string>
     <string name="no_net_title">ما كاينش اتصال</string>
     <string name="no_net_body">تحقق من الإنترنت وعاود</string>
     <string name="retry">عاود</string>
-    <string name="menu">القائمة</string>
+    <string name="press_again">اضغط رجوع مرة أخرى للخروج</string>
+    <string name="cache_cleared">تنحى الكاش</string>
+    <string name="dl_started">يتحمّل:</string>
+    <string name="dl_failed">فشل التحميل</string>
+    <string name="dl_unsupported">هذا النوع من التحميل ما مدعومش</string>
+    <string name="no_app">ما لقيتش تطبيق يفتح هذا الرابط</string>
 </resources>

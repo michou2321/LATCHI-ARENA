@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Latchi Arena AI</string>
+    <string name="splash_tag">Artificial Intelligence · In your pocket</string>
+
+    <string name="login_desc">The best AI models in one place.\nCompare · Test · Pick the winner.</string>
+    <string name="login_card_title">What\'s inside?</string>
+    <string name="login_card_body">Chat with any model · Compare two models side by side · Vote on answers · Saved history · Image and file uploads.</string>
+    <string name="feat_models">Models</string>
+    <string name="feat_compare">Compare</string>
+    <string name="feat_free">Free</string>
+    <string name="start_now">Get started</string>
+    <string name="skip_login">Quick access without account</string>
+    <string name="open_browser">Open in browser</string>
+
+    <string name="loading">Loading…</string>
+    <string name="back">Back</string>
+    <string name="forward">Forward</string>
+    <string name="home">Home</string>
+    <string name="reload">Reload</string>
+    <string name="language">Language</string>
+    <string name="menu">Menu</string>
+    <string name="theme">Theme</string>
+    <string name="no_net_title">No connection</string>
+    <string name="no_net_body">Check your internet and try again</string>
+    <string name="retry">Retry</string>
+    <string name="press_again">Press back again to exit</string>
+    <string name="cache_cleared">Cache cleared</string>
+    <string name="dl_started">Downloading:</string>
+    <string name="dl_failed">Download failed</string>
+    <string name="dl_unsupported">This download type is not supported</string>
+    <string name="no_app">No app found to open this link</string>
+</resources>

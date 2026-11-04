@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.LatchiArena" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@color/bg</item>
-        <item name="android:statusBarColor">@color/bg</item>
-        <item name="android:navigationBarColor">@color/bg</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">#0A0A12</item>
         <item name="android:windowLightStatusBar">false</item>
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorAccent">@color/accent</item>
-        <item name="android:textColorPrimary">@color/text</item>
+        <item name="colorPrimary">@color/brand_violet</item>
+        <item name="colorAccent">@color/brand_cyan</item>
+        <item name="android:textColorPrimary">@color/text_dark</item>
+    </style>
+
+    <style name="Theme.LatchiArena.Dialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="colorAccent">@color/brand_violet</item>
+    </style>
+
+    <style name="Theme.LatchiArena.Splash" parent="Theme.LatchiArena">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">#05050C</item>
+    </style>
+
+    <style name="Theme.LatchiArena.Login" parent="Theme.LatchiArena">
+        <item name="android:windowBackground">@color/bg_dark</item>
     </style>
 </resources>

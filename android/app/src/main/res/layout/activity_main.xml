@@ -1,88 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#0A0A12">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe"
+    <LinearLayout
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="54dp"
+        android:background="#101018"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:elevation="6dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp">
 
-        <WebView
-            android:id="@+id/web"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#0A0A12" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_pill_dark"
+            android:contentDescription="@string/back"
+            android:padding="9dp"
+            android:src="@drawable/ic_back"
+            android:tint="#EDEDF5" />
+
+        <ImageButton
+            android:id="@+id/btnFwd"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/bg_pill_dark"
+            android:contentDescription="@string/forward"
+            android:padding="9dp"
+            android:src="@drawable/ic_forward"
+            android:tint="#EDEDF5" />
+
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/bg_pill_dark"
+            android:contentDescription="@string/home"
+            android:padding="9dp"
+            android:src="@drawable/ic_home"
+            android:tint="#EDEDF5" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Latchi Arena"
+            android:textColor="#EDEDF5"
+            android:textSize="12sp" />
+
+        <ImageButton
+            android:id="@+id/btnReload"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_pill_dark"
+            android:contentDescription="@string/reload"
+            android:padding="9dp"
+            android:src="@drawable/ic_reload"
+            android:tint="#EDEDF5" />
+
+        <ImageButton
+            android:id="@+id/btnLang"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/bg_pill_dark"
+            android:contentDescription="@string/language"
+            android:padding="9dp"
+            android:src="@drawable/ic_lang"
+            android:tint="#EDEDF5" />
+
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/bg_pill_accent"
+            android:contentDescription="@string/menu"
+            android:padding="9dp"
+            android:src="@drawable/ic_menu"
+            android:tint="#FFFFFF" />
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progress"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_gravity="top"
         android:max="100"
         android:progress="0"
         android:progressTint="#7C4DFF"
+        android:progressBackgroundTint="#00000000"
         android:visibility="gone" />
 
-    <LinearLayout
-        android:id="@+id/errorBox"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="#0A0A12"
-        android:padding="32dp"
-        android:visibility="gone">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="📡"
-            android:textSize="56sp" />
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/no_net_title"
-            android:textColor="#EDEDF5"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <WebView
+                android:id="@+id/web"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#0A0A12" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+        <LinearLayout
+            android:id="@+id/errorBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#0A0A12"
             android:gravity="center"
-            android:text="@string/no_net_body"
-            android:textColor="#9A9AB0"
-            android:textSize="14sp" />
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:visibility="gone">
 
-        <Button
-            android:id="@+id/retry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#7C4DFF"
-            android:paddingStart="28dp"
-            android:paddingEnd="28dp"
-            android:text="@string/retry"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📡"
+                android:textSize="56sp" />
 
-    <ImageButton
-        android:id="@+id/more"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_gravity="top|end"
-        android:layout_margin="8dp"
-        android:alpha="0.45"
-        android:background="@drawable/bg_fab"
-        android:contentDescription="@string/menu"
-        android:padding="10dp"
-        android:src="@drawable/ic_more"
-        android:tint="#EDEDF5" />
-</FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/no_net_title"
+                android:textColor="#EDEDF5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/no_net_body"
+                android:textColor="#9A9AB0"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/retry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#7C4DFF"
+                android:paddingStart="28dp"
+                android:paddingEnd="28dp"
+                android:text="@string/retry"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

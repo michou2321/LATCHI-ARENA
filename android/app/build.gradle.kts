@@ -13,8 +13,8 @@ android {
         applicationId = "dz.latchi.arena"
         minSdk = 23
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.1.0"
         resourceConfigurations += listOf("ar", "en")
     }
 
@@ -52,6 +52,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions { jvmTarget = "17" }
+
+    buildFeatures { buildConfig = true }
 
     lint { abortOnError = false; checkReleaseBuilds = false }
 }
