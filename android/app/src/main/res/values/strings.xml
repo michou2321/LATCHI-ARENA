@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Latchi Arena</string>
+    <string name="no_net_title">ما كاينش اتصال</string>
+    <string name="no_net_body">تحقق من الإنترنت وعاود</string>
+    <string name="retry">عاود</string>
+    <string name="menu">القائمة</string>
+</resources>

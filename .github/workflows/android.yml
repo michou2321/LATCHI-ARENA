@@ -1,0 +1,102 @@
+name: Build Latchi Arena APK
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'android/**'
+      - '.github/workflows/android.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: مفتاح التوقيع
+        working-directory: android
+        run: |
+          set -e
+          base64 -d keystore.b64 > latchi-arena.p12
+          cat > keystore.properties <<PP
+          storeFile=latchi-arena.p12
+          storePassword=latchiai2026
+          keyAlias=latchiai
+          keyPassword=latchiai2026
+          PP
+          echo "✓ المفتاح جاهز"
+
+      - name: بناء APK
+        working-directory: android
+        run: |
+          set -e
+          gradle assembleRelease --no-daemon --stacktrace
+          find app/build/outputs -name "*.apk" -exec ls -lh {} \;
+
+      - name: التحقق من التوقيع
+        working-directory: android
+        run: |
+          set -e
+          APK=$(find app/build/outputs -name "*.apk" | head -1)
+          BT=$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)
+          "$ANDROID_HOME/build-tools/$BT/apksigner" verify --print-certs "$APK" | tee /tmp/c.txt
+          grep -q "LATCHI AI" /tmp/c.txt || { echo "::error::توقيع غالط"; exit 1; }
+          echo "✓ موقّع"
+
+      - name: تسمية
+        run: |
+          mkdir -p out
+          find android/app/build/outputs -name "*.apk" -exec cp {} out/LatchiArena-1.0.0.apk \;
+          ls -lh out/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LatchiArena-APK
+          path: out/*.apk
+          retention-days: 90
+
+      - name: Release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: "Latchi Arena 1.0.0 — arena.ai فـتطبيق"
+          body: |
+            ## Latchi Arena 1.0.0
+
+            **الموقع كامل داخل تطبيق.** بلا متصفح · بلا شريط عناوين · بلا تعب.
+
+            ### المزايا
+            - 💬 **المحادثة** مع كل موديلات Arena
+            - 🤖 **اختيار الموديل** من داخل التطبيق
+            - 📊 **المقارنة والتصويت** كيما فـالموقع
+            - 🕘 **السجل** محفوظ
+            - 🖼️ **رفع الصور والملفات** يخدم
+            - ⬇️ **التحميل** يروح للتنزيلات
+            - 🌐 **تسجيل الدخول** داخل التطبيق (جوجل · بريد)
+            - 🌙 واجهة داكنة · سحب للأسفل = تحديث
+
+            ### البدء
+            1. ثبّت APK
+            2. افتح
+            3. سجّل الدخول بحسابك
+            4. اكتب ✅
+
+            > زر ⋮ فوق يمين: تحديث · فتح فـالمتصفح · نسخة سطح المكتب · مسح الكاش
+          files: out/*.apk
+          fail_on_unmatched_files: false

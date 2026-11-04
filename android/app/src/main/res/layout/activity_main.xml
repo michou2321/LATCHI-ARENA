@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A12">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/web"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#0A0A12" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_gravity="top"
+        android:max="100"
+        android:progress="0"
+        android:progressTint="#7C4DFF"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/errorBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#0A0A12"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📡"
+            android:textSize="56sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/no_net_title"
+            android:textColor="#EDEDF5"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/no_net_body"
+            android:textColor="#9A9AB0"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#7C4DFF"
+            android:paddingStart="28dp"
+            android:paddingEnd="28dp"
+            android:text="@string/retry"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/more"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="8dp"
+        android:alpha="0.45"
+        android:background="@drawable/bg_fab"
+        android:contentDescription="@string/menu"
+        android:padding="10dp"
+        android:src="@drawable/ic_more"
+        android:tint="#EDEDF5" />
+</FrameLayout>

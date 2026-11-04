@@ -1,0 +1,7 @@
+*.iml
+.gradle/
+local.properties
+android/latchi-arena.p12
+android/keystore.properties
+build/
+.idea/
