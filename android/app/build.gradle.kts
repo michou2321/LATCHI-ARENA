@@ -13,8 +13,8 @@ android {
         applicationId = "dz.latchi.arena"
         minSdk = 23
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.1.0"
+        versionCode = 3
+        versionName = "1.1.1"
         resourceConfigurations += listOf("ar", "en")
     }
 
